@@ -91,7 +91,7 @@ private suspend fun ByteReadChannel.processNestedAggregates(
         if (currentSize > 0) {
             // Read the next segment
             val nestedLine = readLineCRLF()
-            if (nestedLine.size == 0) break
+            if (nestedLine.size == 0L) break
             val nestedCode = RespCode.fromCode(nestedLine.readByte())
 
             // Decrement the current size in the stack
